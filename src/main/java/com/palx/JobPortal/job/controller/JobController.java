@@ -1,13 +1,12 @@
-package com.palx.JobPortal.controller;
+package com.palx.JobPortal.job.controller;
 
 
-import com.palx.JobPortal.pojo.Job;
-import com.palx.JobPortal.service.JobService;
+import com.palx.JobPortal.job.pojo.Job;
+import com.palx.JobPortal.job.service.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

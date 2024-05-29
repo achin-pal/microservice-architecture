@@ -1,6 +1,6 @@
-package com.palx.JobPortal.service;
+package com.palx.JobPortal.job.service;
 
-import com.palx.JobPortal.pojo.Job;
+import com.palx.JobPortal.job.pojo.Job;
 
 import java.util.List;
 

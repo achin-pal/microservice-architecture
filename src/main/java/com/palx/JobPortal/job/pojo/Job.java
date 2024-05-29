@@ -1,7 +1,15 @@
-package com.palx.JobPortal.pojo;
+package com.palx.JobPortal.job.pojo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Job {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
@@ -16,6 +24,10 @@ public class Job {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+
+    public Job() {
+
     }
 
     public Long getId() {
