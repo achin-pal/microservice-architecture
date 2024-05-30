@@ -2,6 +2,7 @@ package com.palx.JobPortal.company.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.palx.JobPortal.job.pojo.Job;
+import com.palx.JobPortal.review.pojo.Review;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,16 +20,26 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobList;
 
-    //private List<Review> reviews;
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
-    public Company() {
-    }
-
-    public Company(Long id, String name, String description, List<Job> jobList) {
+    public Company(Long id, String name, String description, List<Job> jobList, List<Review> reviews) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.jobList = jobList;
+        this.reviews = reviews;
+    }
+
+    public Company() {
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Long getId() {
