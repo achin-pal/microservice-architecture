@@ -1,6 +1,7 @@
 package com.palx.JobPortal.job.controller;
 
 
+import com.palx.JobPortal.company.pojo.Company;
 import com.palx.JobPortal.job.pojo.Job;
 import com.palx.JobPortal.job.service.JobService;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,7 @@ public class JobController {
     @PostMapping()
     public ResponseEntity<String> createJobs( @RequestBody Job job){
         jobService.createJoB(job);
+        Company c= job.getCompany();
         return ResponseEntity.ok("jobs added");
     }
 
